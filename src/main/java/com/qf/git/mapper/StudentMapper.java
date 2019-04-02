@@ -1,17 +1,8 @@
 package com.qf.git.mapper;
 
+import com.qf.git.dao.IDaseDao;
 import com.qf.git.entity.Student;
 
-public interface StudentMapper {
-    int deleteByPrimaryKey(Integer id);
+public interface StudentMapper extends IDaseDao<Student> {
 
-    int insert(Student record);
-
-    int insertSelective(Student record);
-
-    Student selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Student record);
-
-    int updateByPrimaryKey(Student record);
 }
