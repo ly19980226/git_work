@@ -5,4 +5,5 @@ import com.qf.git.entity.Student;
 
 public interface StudentMapper extends IDaseDao<Student> {
 
+    int delById(Integer id);
 }

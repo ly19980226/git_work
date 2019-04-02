@@ -20,4 +20,19 @@ public class StudentServiceImpl extends DaseServiceImpl<Student> implements IStu
     public SysResult add(Student student, Integer className) {
         return null;
     }
+    /*假删的方法*/
+    @Override
+    public int del(Integer id) {
+        return studentMapper.delById(id);
+    }
+    /*根据id获取学生实例*/
+    @Override
+    public Student toUpdate(Integer id) {
+        return studentMapper.selectByPrimaryKey(id);
+    }
+    /*修改学生实例*/
+    @Override
+    public int update(Student student) {
+        return studentMapper.updateByPrimaryKeySelective(student);
+    }
 }

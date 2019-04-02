@@ -1,10 +1,10 @@
 package com.qf.git.dao;
 
 public interface IDaseDao<T> {
-    int deleteByPrimaryKey(Long orgId);
+    int deleteByPrimaryKey(Integer orgId);
     int insert(T t);
     int insertSelective(T t);
-    T  selectByPrimaryKey(Long orgId);
+    T  selectByPrimaryKey(Integer orgId);
     int updateByPrimaryKeySelective(T t);
     int updateByPrimaryKey(T t);
 }
