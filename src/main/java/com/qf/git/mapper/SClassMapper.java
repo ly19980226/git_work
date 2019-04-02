@@ -1,17 +1,11 @@
 package com.qf.git.mapper;
 
+import com.qf.git.dao.IDaseDao;
 import com.qf.git.entity.SClass;
 
-public interface SClassMapper {
-    int deleteByPrimaryKey(Integer id);
+import java.util.List;
 
-    int insert(SClass record);
+public interface SClassMapper extends IDaseDao<SClass> {
 
-    int insertSelective(SClass record);
-
-    SClass selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(SClass record);
-
-    int updateByPrimaryKey(SClass record);
+    List<SClass> getlist();
 }

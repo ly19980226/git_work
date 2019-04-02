@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.g.mapper.SClassMapper">
-  <resultMap id="BaseResultMap" type="com.qf.oa.entity.SClass">
+<mapper namespace="com.qf.git.mapper.SClassMapper">
+  <resultMap id="BaseResultMap" type="com.qf.git.entity.SClass">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="class_name" jdbcType="VARCHAR" property="className" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from s_class
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qf.oa.entity.SClass">
+  <insert id="insert" parameterType="com.qf.git.entity.SClass">
     insert into s_class (id, class_name)
     values (#{id,jdbcType=INTEGER}, #{className,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.qf.oa.entity.SClass">
+  <insert id="insertSelective" parameterType="com.qf.git.entity.SClass">
     insert into s_class
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qf.oa.entity.SClass">
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.git.entity.SClass">
     update s_class
     <set>
       <if test="className != null">
@@ -50,9 +50,16 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qf.oa.entity.SClass">
+  <update id="updateByPrimaryKey" parameterType="com.qf.git.entity.SClass">
     update s_class
     set class_name = #{className,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getlist" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from s_class
+  </select>
+
 </mapper>

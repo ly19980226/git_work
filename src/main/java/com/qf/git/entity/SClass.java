@@ -17,6 +17,14 @@ public class SClass {
         return className;
     }
 
+    @Override
+    public String toString() {
+        return "SClass{" +
+                "id=" + id +
+                ", className='" + className + '\'' +
+                '}';
+    }
+
     public void setClassName(String className) {
         this.className = className == null ? null : className.trim();
     }

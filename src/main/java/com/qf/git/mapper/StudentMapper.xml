@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.g.mapper.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.qf.oa.entity.Student">
+<mapper namespace="com.qf.git.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.qf.git.entity.Student">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="stu_name" jdbcType="VARCHAR" property="stuName" />
     <result column="class_id" jdbcType="INTEGER" property="classId" />
@@ -23,7 +23,7 @@
     delete from student
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qf.oa.entity.Student">
+  <insert id="insert" parameterType="com.qf.git.entity.Student">
     insert into student (id, stu_name, class_id, 
       stu_age, stu_sex, flag, stu_birthday
       )
@@ -31,7 +31,7 @@
       #{stuAge,jdbcType=INTEGER}, #{stuSex,jdbcType=VARCHAR}, #{flag,jdbcType=BIT}, #{stuBirthday,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.qf.oa.entity.Student">
+  <insert id="insertSelective" parameterType="com.qf.git.entity.Student">
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qf.oa.entity.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.git.entity.Student">
     update student
     <set>
       <if test="stuName != null">
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qf.oa.entity.Student">
+  <update id="updateByPrimaryKey" parameterType="com.qf.git.entity.Student">
     update student
     set stu_name = #{stuName,jdbcType=VARCHAR},
       class_id = #{classId,jdbcType=INTEGER},

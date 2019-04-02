@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.g.mapper.TeacherMapper">
-  <resultMap id="BaseResultMap" type="com.qf.oa.entity.Teacher">
+<mapper namespace="com.qf.git.mapper.TeacherMapper">
+  <resultMap id="BaseResultMap" type="com.qf.git.entity.Teacher">
     <id column="t_id" jdbcType="INTEGER" property="tId" />
     <result column="t_name" jdbcType="VARCHAR" property="tName" />
     <result column="t_age" jdbcType="INTEGER" property="tAge" />
@@ -21,13 +21,13 @@
     delete from teacher
     where t_id = #{tId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qf.oa.entity.Teacher">
+  <insert id="insert" parameterType="com.qf.git.entity.Teacher">
     insert into teacher (t_id, t_name, t_age, 
       t_sex, t_sort)
     values (#{tId,jdbcType=INTEGER}, #{tName,jdbcType=VARCHAR}, #{tAge,jdbcType=INTEGER}, 
       #{tSex,jdbcType=VARCHAR}, #{tSort,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.qf.oa.entity.Teacher">
+  <insert id="insertSelective" parameterType="com.qf.git.entity.Teacher">
     insert into teacher
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="tId != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qf.oa.entity.Teacher">
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.git.entity.Teacher">
     update teacher
     <set>
       <if test="tName != null">
@@ -82,7 +82,7 @@
     </set>
     where t_id = #{tId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qf.oa.entity.Teacher">
+  <update id="updateByPrimaryKey" parameterType="com.qf.git.entity.Teacher">
     update teacher
     set t_name = #{tName,jdbcType=VARCHAR},
       t_age = #{tAge,jdbcType=INTEGER},
