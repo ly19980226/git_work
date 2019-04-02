@@ -1,6 +1,6 @@
-package com.qf.oa.mapper;
+package com.qf.git.mapper;
 
-import com.qf.oa.entity.SClass;
+import com.qf.git.entity.SClass;
 
 public interface SClassMapper {
     int deleteByPrimaryKey(Integer id);

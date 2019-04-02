@@ -1,4 +1,4 @@
-package com.qf.oa.entity;
+package com.qf.git.entity;
 
 public class SClass {
     private Integer id;

@@ -1,6 +1,6 @@
-package com.qf.oa.mapper;
+package com.qf.git.mapper;
 
-import com.qf.oa.entity.Student;
+import com.qf.git.entity.Student;
 
 public interface StudentMapper {
     int deleteByPrimaryKey(Integer id);
