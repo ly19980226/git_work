@@ -1,5 +1,8 @@
 package com.qf.git.entity;
 
+/**
+ * 老师类
+ */
 public class Teacher {
     private Integer tId;
 
