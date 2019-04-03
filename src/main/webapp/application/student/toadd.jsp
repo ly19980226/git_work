@@ -23,7 +23,7 @@
             生日：<input type="text" name="stuBirthday"><br/>
             <input type="submit" value="添加">
             <input type="reset" value="重置">
-
+            ${msg}
         </table>
     </form>
 </body>

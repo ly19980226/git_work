@@ -7,7 +7,11 @@ import com.qf.git.mapper.StudentMapper;
 import com.qf.git.service.IDaseService;
 import com.qf.git.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class StudentServiceImpl extends DaseServiceImpl<Student> implements IStudentService {
     @Autowired
     private StudentMapper studentMapper;
@@ -34,5 +38,10 @@ public class StudentServiceImpl extends DaseServiceImpl<Student> implements IStu
     @Override
     public int update(Student student) {
         return studentMapper.updateByPrimaryKeySelective(student);
+    }
+
+    @Override
+    public List<Student> getList() {
+        return studentMapper.getList();
     }
 }

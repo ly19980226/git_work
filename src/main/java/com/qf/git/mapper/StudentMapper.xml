@@ -117,4 +117,9 @@
   <update id="delById" parameterType="int">
     UPDATE student SET flag=0 WHERE id=#{id}
   </update>
+  <select id="getList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from student WHERE flag=1
+  </select>
 </mapper>

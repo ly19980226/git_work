@@ -16,7 +16,7 @@
 </head>
 <body>
 <a href="#"> 教师管理</a>
-<a href="#">学生信息</a>
+<a href="student/getList">学生信息</a>
 <a href="class/getlist">班级信息</a>
 </body>
 </html>
